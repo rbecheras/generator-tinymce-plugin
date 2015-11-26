@@ -10,7 +10,7 @@
     "tinymce",
     "plugin",
   <% for(var i in keywords){ %>
-    <%= keywords[i] %>
+    "<%= keywords[i] %>"
   <% } %>
   ],
   "license": "LGPL-2.1",
