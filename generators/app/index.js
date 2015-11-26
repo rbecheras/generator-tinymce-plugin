@@ -44,7 +44,7 @@ module.exports = yeoman.generators.Base.extend({
     },{
       type: 'input',
       name: 'publicUpstreamNameSpace',
-      message: 'What is your github username ? (leave empty to ignore)',
+      message: 'What is your github username ?',
       default: null
     }];
 
