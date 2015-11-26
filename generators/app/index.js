@@ -12,6 +12,10 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the SWAP ' + chalk.red('generator-tinymce-plugin') + ' generator!'
     ));
 
+    this.log(
+      chalk.blue('Please make sure to create a new empty github repository with a name of the form: tinymce-plugin-<PLUGIN_NAME>.')
+    );
+
     var prompts = [{
       type: 'input',
       name: 'pluginName',
