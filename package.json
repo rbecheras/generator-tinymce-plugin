@@ -1,6 +1,6 @@
 {
   "name": "generator-tinymce-plugin",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Generator to create tinymce plugins",
   "homepage": "http://gitlab.sirap.fr/SWAP/generator-tinymce-plugin",
   "author": {
