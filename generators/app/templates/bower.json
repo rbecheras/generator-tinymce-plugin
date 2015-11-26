@@ -9,9 +9,7 @@
   "keywords": [
     "tinymce",
     "plugin",
-  <% for(var i in keywords){ %>
-    "<%= keywords[i] %>"
-  <% } %>
+    <% for(var i in keywords){ %>"<%= keywords[i] %>"<%if(i<keywords.length-1){%>,<%}%><% } %>
   ],
   "license": "LGPL-2.1",
   "ignore": [
