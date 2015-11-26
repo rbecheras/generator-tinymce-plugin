@@ -95,5 +95,34 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     this.installDependencies();
+  },
+
+  end: function(){
+    var that = this;
+    that.spawnCommand('git', ['init'])
+    .on('exit',function(){
+      var gitrepo = 'git@github.com:'+that.props.publicUpstreamNameSpace+'/tinymce-plugin-'+that.props.pluginName+'.git';
+      that.spawnCommand('git', ['remote', 'add', 'upstream', gitrepo])
+      .on('exit',function(){
+        that.spawnCommand('git', ['add', '.', '--all'])
+        .on('exit',function(){
+          that.spawnCommand('git', ['commit', '-m', '"initial commit from generator"'])
+          .on('exit',function(){
+            that.spawnCommand('git', ['tag', 'v0.1.0'])
+            .on('exit',function(){
+              that.spawnCommand('git', ['push', '-u', 'upstream', 'master'])
+              .on('exit',function(){
+                that.spawnCommand('git', ['push', 'upstream', '--tags'])
+                .on('exit',function(){
+                  that.log(yosay(
+                    chalk.green('Your new Tinymce plugin was generated and a first release was pushed on github !')
+                  ));
+                });
+              });
+            });
+          });
+        });
+      });
+    });
   }
 });
