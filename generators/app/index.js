@@ -20,7 +20,7 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'pluginName',
       message: 'What name for this new tinymce plugin ?',
-      default: 'mce-custom-plugin'
+      default: 'testgenerator'
     },{
       type: 'input',
       name: 'pluginDescription',
